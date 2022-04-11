@@ -1,0 +1,195 @@
+{
+    "version": "1.17",
+    "alias": "AddLayersExample",
+    "color": "#51b848",
+    "mute": false,
+    "solo": false,
+    "references": [
+        "../graphs/pxr_usd_tools.nxt"
+    ],
+    "meta_data": {
+        "positions": {
+            "/AddPayload": [
+                2123.721105083459,
+                282.58161971215026
+            ],
+            "/AddPayload2": [
+                267.2836277638088,
+                -181.68835387427546
+            ],
+            "/AddReference": [
+                325.01443445704183,
+                -219.68106437796496
+            ],
+            "/AddSublayer": [
+                2277.2348166631386,
+                515.299135277465
+            ],
+            "/DefinePrim2": [
+                605.8194000006704,
+                -522.5135906262254
+            ],
+            "/Mesh2": [
+                799.1306177113538,
+                -129.7408323493927
+            ],
+            "/OpenOrFind": [
+                14.841138880982157,
+                -170.47926079430283
+            ],
+            "/OpenOrFind2": [
+                517.9441920064114,
+                -722.0213842330963
+            ],
+            "/OpenOrFind3": [
+                2040.8284762675394,
+                -286.94124109763965
+            ],
+            "/OpenOrFind_Payload": [
+                2128.6819252261193,
+                92.01810892893583
+            ],
+            "/OpenOrFind_Payload2": [
+                905.076679072771,
+                -362.01055760916915
+            ],
+            "/OpenOrFind_Sublayer": [
+                2147.8331737147473,
+                300.4071437989132
+            ],
+            "/OpenOrFind_Sublayer2": [
+                719.7781726334118,
+                -247.42717974303193
+            ],
+            "/OpenOrFind_ref": [
+                2096.020065677537,
+                -121.08703934427201
+            ],
+            "/OpenOrFind_ref2": [
+                658.1199313370953,
+                -517.6065436818076
+            ],
+            "/RootLayerSave2": [
+                572.6884491782423,
+                -159.54080031950366
+            ],
+            "/Sphere2": [
+                954.373268272546,
+                -217.89700280495617
+            ],
+            "/StageOpen": [
+                17.92087296275983,
+                43.469164609315044
+            ],
+            "/StageOpen2": [
+                2054.169648997323,
+                -270.87443277726777
+            ],
+            "/node": [
+                2096.2199581896048,
+                -92.7637567704595
+            ]
+        },
+        "collapse": {
+            "/OpenOrFind/StageOpen3": false,
+            "/OpenOrFind2": false,
+            "/OpenOrFind2/StageOpen2/DefinePrim2/OpenOrFind_Payload2": false,
+            "/OpenOrFind2/StageOpen2/DefinePrim2/OpenOrFind_Sublayer2": false,
+            "/OpenOrFind2/StageOpen2/DefinePrim2/OpenOrFind_ref2": false,
+            "/OpenOrFind2/StageOpen2/DefinePrim2/RootLayerSave2": false,
+            "/OpenOrFind3/StageOpen2": true,
+            "/OpenOrFind_Payload/StageOpen2": false,
+            "/node": true
+        }
+    },
+    "nodes": {
+        "/": {
+            "child_order": [
+                "AddPayload",
+                "AddReference",
+                "RootLayerSave",
+                "OpenOrFind_ref",
+                "OpenOrFind_Payload",
+                "OpenOrFind_Sublayer",
+                "OpenOrFind_Sublayer2",
+                "RootLayerSave2",
+                "OpenOrFind_ref2",
+                "OpenOrFind_Payload2",
+                "OpenOrFind2",
+                "StageOpen2",
+                "DefinePrim2"
+            ],
+            "attrs": {
+                "USD_file": {
+                    "type": "raw",
+                    "value": "${path::}/tests/AddLayersExample.usda"
+                }
+            }
+        },
+        "/OpenOrFind2": {
+            "start_point": true,
+            "instance": "/OpenOrFind",
+            "child_order": [
+                "StageOpen2"
+            ],
+            "attrs": {
+                "name": {
+                    "value": "AddLayersExample"
+                },
+                "path": {
+                    "value": "${path::}/tests/"
+                }
+            }
+        },
+        "/OpenOrFind2/StageOpen2": {
+            "instance": "/StageOpen",
+            "child_order": [
+                "DefinePrim2"
+            ]
+        },
+        "/OpenOrFind2/StageOpen2/DefinePrim2": {
+            "instance": "/DefinePrim",
+            "child_order": [
+                "OpenOrFind_ref2",
+                "OpenOrFind_Payload2",
+                "OpenOrFind_Sublayer2",
+                "RootLayerSave2"
+            ],
+            "attrs": {
+                "prim_name": {
+                    "value": "/new_sphere"
+                },
+                "type_usdgeom": {
+                    "value": "Sphere"
+                }
+            }
+        },
+        "/OpenOrFind2/StageOpen2/DefinePrim2/OpenOrFind_Payload2": {
+            "instance": "/OpenOrFind_Payload",
+            "attrs": {
+                "name": {
+                    "value": "HelloWorldRedux"
+                }
+            }
+        },
+        "/OpenOrFind2/StageOpen2/DefinePrim2/OpenOrFind_Sublayer2": {
+            "instance": "/OpenOrFind_Sublayer",
+            "attrs": {
+                "name": {
+                    "value": "AuthorVariants"
+                }
+            }
+        },
+        "/OpenOrFind2/StageOpen2/DefinePrim2/OpenOrFind_ref2": {
+            "instance": "/OpenOrFind_ref",
+            "attrs": {
+                "name": {
+                    "value": "HelloWorld"
+                }
+            }
+        },
+        "/OpenOrFind2/StageOpen2/DefinePrim2/RootLayerSave2": {
+            "instance": "/RootLayerSave"
+        }
+    }
+}

@@ -1,0 +1,138 @@
+{
+    "version": "1.17",
+    "alias": "HelloWorld",
+    "color": "#017f36",
+    "mute": false,
+    "solo": false,
+    "references": [
+        "../graphs/pxr_usd_tools.nxt"
+    ],
+    "meta_data": {
+        "positions": {
+            "/DefinePrim2": [
+                518.98825732505,
+                -320.73765160945567
+            ],
+            "/DefinePrim_pasted": [
+                134.0,
+                -163.0
+            ],
+            "/OpenOrFind_Payload": [
+                2078.2675845237964,
+                -26.934643651329722
+            ],
+            "/OpenOrFind_Sublayer": [
+                2129.1541878757425,
+                441.84850176063316
+            ],
+            "/OpenOrFind_hello": [
+                623.9792716009927,
+                -442.10771843662417
+            ],
+            "/OpenOrFind_ref": [
+                2113.2021659782686,
+                212.7184774465392
+            ],
+            "/RootLayerSave2": [
+                663.4952571546337,
+                -286.3396926894462
+            ],
+            "/RootLayerSave_pasted": [
+                166.0,
+                -137.0
+            ],
+            "/Sphere2": [
+                690.222348322181,
+                -305.98285409276156
+            ],
+            "/Sphere_pasted": [
+                88.0,
+                -135.0
+            ],
+            "/StageOpen2": [
+                534.8865393477629,
+                -382.56150179296657
+            ],
+            "/StageOpen_hello": [
+                -386.7876226130587,
+                -791.4163032805952
+            ],
+            "/StageOpen_pasted": [
+                3.0,
+                -190.0
+            ],
+            "/UsdView3": [
+                133.00314158615663,
+                -418.87296284700915
+            ]
+        },
+        "collapse": {
+            "/CreateNew_hello/StageOpen_hello/DefinePrim_hello": false,
+            "/OpenOrFind_hello": false,
+            "/OpenOrFind_hello/StageOpen_hello": false
+        }
+    },
+    "nodes": {
+        "/": {
+            "child_order": [
+                "StageOpen_hello",
+                "OpenOrFind_hello",
+                "StageOpen2",
+                "DefinePrim2",
+                "Sphere2",
+                "RootLayerSave2",
+                "UsdView3"
+            ],
+            "attrs": {
+                "USD_file": {
+                    "type": "raw",
+                    "value": "${path::}/tests/HelloWorld.usda"
+                }
+            }
+        },
+        "/OpenOrFind_hello": {
+            "start_point": true,
+            "instance": "/OpenOrFind",
+            "child_order": [
+                "StageOpen_hello"
+            ],
+            "attrs": {
+                "path": {
+                    "value": "${path::}/tests/"
+                }
+            },
+            "code": [
+                "if Usd.Stage.IsSupportedFile('${directory}'):",
+                "    self.root_layer = Sdf.Layer.FindOrOpen('${directory}')",
+                "    if not self.root_layer:",
+                "        if Sdf.Layer.GetLoadedLayers():",
+                "            for layer in Sdf.Layer.GetLoadedLayers():",
+                "                temp_stage = Usd.Stage.Open(layer)",
+                "                temp_stage = None",
+                "        self.root_layer = Sdf.Layer.CreateNew('${directory}')",
+                "else:",
+                "    print('File is not a supported type: ${directory}')"
+            ]
+        },
+        "/OpenOrFind_hello/StageOpen_hello": {
+            "instance": "/StageOpen",
+            "child_order": [
+                "DefinePrim_hello",
+                "Sphere_world",
+                "RootLayerSave_helloWorld"
+            ]
+        },
+        "/OpenOrFind_hello/StageOpen_hello/DefinePrim_hello": {
+            "instance": "/DefinePrim"
+        },
+        "/OpenOrFind_hello/StageOpen_hello/RootLayerSave_helloWorld": {
+            "instance": "/RootLayerSave"
+        },
+        "/OpenOrFind_hello/StageOpen_hello/Sphere_world": {
+            "instance": "/Sphere"
+        },
+        "/UsdView3": {
+            "instance": "/UsdView"
+        }
+    }
+}

@@ -1,0 +1,197 @@
+{
+    "version": "1.17",
+    "alias": "ModelApiExample",
+    "color": "#01697f",
+    "mute": false,
+    "solo": false,
+    "references": [
+        "../graphs/pxr_usd_tools.nxt"
+    ],
+    "meta_data": {
+        "positions": {
+            "/DefinePrim2": [
+                550.4650397687586,
+                -272.3677742721693
+            ],
+            "/ModelApi2": [
+                660.6343827287253,
+                -253.98177659597943
+            ],
+            "/OpenOrFind": [
+                18.646675065047717,
+                -145.54317967650914
+            ],
+            "/OpenOrFind2": [
+                504.58150369855366,
+                -427.8628533932383
+            ],
+            "/OpenOrFind22": [
+                861.2457589009898,
+                -566.3722619357744
+            ],
+            "/OpenOrFind_Payload": [
+                2084.3916484529755,
+                173.21814253071813
+            ],
+            "/OpenOrFind_Sublayer": [
+                2119.905873945835,
+                374.77265785608586
+            ],
+            "/OpenOrFind_ref": [
+                2052.63498898901,
+                -34.64362850614362
+            ],
+            "/RootLayerSave2": [
+                666.3387862672446,
+                -161.2852190950404
+            ],
+            "/SetAssetIdentifier2": [
+                1051.8259641552943,
+                -441.2784434941371
+            ],
+            "/SetAssetName2": [
+                911.0001337639114,
+                -284.79011940481166
+            ],
+            "/SetKind2": [
+                635.2362050691274,
+                -173.30521226549183
+            ],
+            "/Sphere": [
+                517.9928345736265,
+                -50.23318702672118
+            ],
+            "/StageOpen": [
+                12.718510515003516,
+                47.02526087335261
+            ],
+            "/StageOpen2": [
+                1028.0422032652675,
+                -428.10252940341195
+            ],
+            "/StageOpen3": [
+                581.6207534652629,
+                -341.3083311370056
+            ],
+            "/UsdCat2": [
+                37.953341672143154,
+                -318.490889460108
+            ],
+            "/UsdView2": [
+                28.722861447313676,
+                -411.45441949400447
+            ]
+        },
+        "collapse": {
+            "/OpenOrFind": false,
+            "/OpenOrFind/StageOpen/DefinePrim/ModelApi": false,
+            "/OpenOrFind/StageOpen/Sphere": false,
+            "/OpenOrFind2/StageOpen3": false,
+            "/OpenOrFind2/StageOpen3/DefinePrim2": false,
+            "/OpenOrFind2/StageOpen3/DefinePrim2/ModelApi2": false,
+            "/OpenOrFind2/StageOpen3/DefinePrim2/ModelApi2/SetAssetName2": true
+        }
+    },
+    "nodes": {
+        "/": {
+            "child_order": [
+                "ModelApi",
+                "SetKind",
+                "RootLayerSave",
+                "ModelApi2",
+                "DefinePrim",
+                "StageOpen2",
+                "OpenOrFind2",
+                "StageOpen3",
+                "DefinePrim2",
+                "SetKind2",
+                "RootLayerSave2",
+                "UsdView2",
+                "SetAssetName2",
+                "SetAssetIdentifier2",
+                "UsdCat2"
+            ],
+            "attrs": {
+                "USD_file": {
+                    "value": "${path::}/tests/ModelApiExample.usda"
+                }
+            }
+        },
+        "/OpenOrFind2": {
+            "start_point": true,
+            "instance": "/OpenOrFind",
+            "child_order": [
+                "StageOpen3"
+            ],
+            "attrs": {
+                "name": {
+                    "value": "ModelApiExample"
+                },
+                "path": {
+                    "type": "raw",
+                    "value": "${path::}/tests/"
+                }
+            }
+        },
+        "/OpenOrFind2/StageOpen3": {
+            "instance": "/StageOpen",
+            "child_order": [
+                "DefinePrim2",
+                "RootLayerSave2"
+            ]
+        },
+        "/OpenOrFind2/StageOpen3/DefinePrim2": {
+            "instance": "/DefinePrim",
+            "child_order": [
+                "ModelApi2"
+            ],
+            "attrs": {
+                "prim_name": {
+                    "value": "/SphereNew"
+                },
+                "type_usdgeom": {
+                    "value": "Sphere"
+                }
+            }
+        },
+        "/OpenOrFind2/StageOpen3/DefinePrim2/ModelApi2": {
+            "instance": "/ModelApi",
+            "child_order": [
+                "SetKind2",
+                "SetAssetName2",
+                "SetAssetIdentifier2"
+            ]
+        },
+        "/OpenOrFind2/StageOpen3/DefinePrim2/ModelApi2/SetAssetIdentifier2": {
+            "instance": "/SetAssetIdentifier",
+            "attrs": {
+                "asset_identifier": {
+                    "value": "${directory}"
+                }
+            }
+        },
+        "/OpenOrFind2/StageOpen3/DefinePrim2/ModelApi2/SetAssetName2": {
+            "instance": "/SetAssetName",
+            "attrs": {
+                "asset_name": {
+                    "value": "SphereNew"
+                }
+            },
+            "code": [
+                "self.model.SetAssetName('${asset_name}')"
+            ]
+        },
+        "/OpenOrFind2/StageOpen3/DefinePrim2/ModelApi2/SetKind2": {
+            "instance": "/SetKind"
+        },
+        "/OpenOrFind2/StageOpen3/RootLayerSave2": {
+            "instance": "/RootLayerSave"
+        },
+        "/UsdCat2": {
+            "instance": "/UsdCat"
+        },
+        "/UsdView2": {
+            "instance": "/UsdView"
+        }
+    }
+}

@@ -1,0 +1,74 @@
+{
+    "version": "1.17",
+    "alias": "HelloWorldRedux",
+    "color": "#51b848",
+    "mute": false,
+    "solo": false,
+    "references": [
+        "./HelloWorld.nxt"
+    ],
+    "meta_data": {
+        "positions": {
+            "/CreateNew_hello_pasted": [
+                -121.7857142857143,
+                -436.07142857142856
+            ],
+            "/StageOpen_hello": [
+                16.01955403574607,
+                -658.6994878529541
+            ],
+            "/UsdView2": [
+                24.38049653659027,
+                -444.3693367863632
+            ],
+            "/UsdView3": [
+                32.55197498359746,
+                -390.4954302109619
+            ]
+        },
+        "collapse": {
+            "/CreateNew_hello/StageOpen_hello/DefinePrim_hello": false,
+            "/CreateNew_hello/StageOpen_hello/DefinePrim_hello/Sphere_world": false,
+            "/CreateNew_hello_pasted": false,
+            "/CreateNew_hello_pasted/StageOpen_hello": false
+        }
+    },
+    "nodes": {
+        "/": {
+            "child_order": [
+                "RootLayerSave_helloWorld",
+                "StageOpen_hello",
+                "OpenOrFind_hello",
+                "UsdView2"
+            ],
+            "attrs": {
+                "USD_file": {
+                    "type": "raw",
+                    "value": "${path::}/tests/HelloWorldRedux.usda"
+                }
+            }
+        },
+        "/OpenOrFind_hello": {
+            "attrs": {
+                "name": {
+                    "value": "HelloWorldRedux"
+                }
+            }
+        },
+        "/OpenOrFind_hello/StageOpen_hello/Sphere_world": {
+            "attrs": {
+                "prim": {},
+                "type_usdgeom": {
+                    "type": "raw",
+                    "value": "Sphere"
+                }
+            },
+            "code": [
+                "self.prim = self.stage.DefinePrim('${prim_name}', '${type_usdgeom}')"
+            ]
+        },
+        "/UsdView2": {
+            "instance": "/UsdView"
+        }
+    }
+}
