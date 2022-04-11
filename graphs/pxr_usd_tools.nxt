@@ -1,0 +1,427 @@
+{
+    "version": "1.17",
+    "alias": "pxr_usd_tools",
+    "color": "#c91781",
+    "mute": false,
+    "solo": false,
+    "references": [
+        "./pxr_usd_helpers.nxt",
+        "./pxr_usd_class.nxt",
+        "./pxr_usd_layers.nxt",
+        "./pxr_usd_model_api.nxt",
+        "./pxr_usd_variants.nxt",
+        "./pxr_usd_geom.nxt",
+        "./pxr_usd.nxt"
+    ],
+    "meta_data": {
+        "aliases": {
+            "./pxr_usd.nxt": "pxr_usd_core"
+        },
+        "colors": {
+            "./pxr_usd_variants.nxt": "#2d9c1c"
+        },
+        "positions": {
+            "/AddPayload": [
+                2105.854937259839,
+                85.39557734224813
+            ],
+            "/AddReference": [
+                2097.3153795256144,
+                -23.91076165582948
+            ],
+            "/AddSublayer": [
+                2104.1470257129945,
+                201.53356252770564
+            ],
+            "/AddVariant": [
+                1319.1617546917594,
+                80.84750284117011
+            ],
+            "/AddVariantSet": [
+                1323.0917580422436,
+                -44.78358214273767
+            ],
+            "/BasisCurves": [
+                875.6599940732531,
+                290.6704702548714
+            ],
+            "/Capsule": [
+                514.2714916486673,
+                493.65211580426296
+            ],
+            "/Cone": [
+                517.5632329481199,
+                187.59573491970684
+            ],
+            "/CreateClass": [
+                2511.7179813110115,
+                -56.18095016957175
+            ],
+            "/CreateNew": [
+                19.75236483993075,
+                -56.772703544544754
+            ],
+            "/Cube": [
+                512.5383471913423,
+                80.3981721084458
+            ],
+            "/Cylinder": [
+                517.3818637564217,
+                405.4034243061339
+            ],
+            "/DefinePrim": [
+                510.5553254693838,
+                292.0965563983494
+            ],
+            "/FindAllVariants": [
+                2908.6418151557687,
+                54.16465205131787
+            ],
+            "/GetAttribute": [
+                17.402739261617967,
+                411.4504782568242
+            ],
+            "/GetDefaultPrim": [
+                17.885556445532103,
+                700.5176274500079
+            ],
+            "/GetPrimAtPath": [
+                18.645792066019226,
+                248.61056088025623
+            ],
+            "/GetPropertyNames": [
+                16.15968645721665,
+                334.3812043839447
+            ],
+            "/GetStageAxis": [
+                28.42852336409328,
+                1001.1120532961429
+            ],
+            "/GetStageMetersPerUnit": [
+                28.50287201835772,
+                1102.2595255931826
+            ],
+            "/GetVariantEditContext": [
+                1321.8566714531316,
+                319.3476362226221
+            ],
+            "/HasStageMetersPerUnit": [
+                39.0415764362337,
+                1298.32541983166
+            ],
+            "/InheriteClass": [
+                2518.098078515707,
+                47.06725380403189
+            ],
+            "/ListModules": [
+                2911.5407083097753,
+                -51.23043990742694
+            ],
+            "/Mesh": [
+                885.8028361972629,
+                -47.56934522373683
+            ],
+            "/ModelApi": [
+                1685.7788480741056,
+                -35.3140001250364
+            ],
+            "/NurbsCurves": [
+                877.2882874506622,
+                411.0737194399438
+            ],
+            "/NurbsPatch": [
+                885.3895495629561,
+                188.51013761299194
+            ],
+            "/OpenOrFind": [
+                14.109588138804384,
+                -189.7817144929553
+            ],
+            "/OpenOrFind_Payload": [
+                2084.437038019962,
+                175.0927111936768
+            ],
+            "/OpenOrFind_Sublayer": [
+                2129.298945932987,
+                381.82850097430435
+            ],
+            "/OpenOrFind_ref": [
+                2060.3655825355913,
+                -63.51992833827546
+            ],
+            "/Points": [
+                889.0381328715945,
+                74.18786060898391
+            ],
+            "/Purpose": [
+                515.3132762384986,
+                613.2924068020824
+            ],
+            "/RootLayerSave": [
+                16.44428156008675,
+                152.715193683245
+            ],
+            "/RootPath": [
+                22.824395477457884,
+                805.9864652977305
+            ],
+            "/SetAssetIdentifier": [
+                1680.2723319171741,
+                414.05857197488075
+            ],
+            "/SetAssetName": [
+                1686.182699623111,
+                207.8391914677125
+            ],
+            "/SetAssetVersion": [
+                1680.232793073148,
+                317.7761640391299
+            ],
+            "/SetAttribute": [
+                16.15968645721665,
+                502.1933329781177
+            ],
+            "/SetDefaultPrim": [
+                18.87919847028388,
+                609.1025611728438
+            ],
+            "/SetKind": [
+                1680.3022829786444,
+                86.72184592914704
+            ],
+            "/SetPayloadAssetDependencies": [
+                1680.4110891164783,
+                517.2911349037773
+            ],
+            "/SetStageAxis": [
+                17.733503425460412,
+                914.6749111977593
+            ],
+            "/SetStageMetersPerUnit": [
+                34.35077685880347,
+                1208.0977974676525
+            ],
+            "/SetVariantSelection": [
+                1324.551588214504,
+                208.85604900635622
+            ],
+            "/Sphere": [
+                512.9367551073819,
+                -43.34676803724355
+            ],
+            "/StageOpen": [
+                21.316267707473827,
+                43.469164609315044
+            ],
+            "/UsdCat": [
+                -518.4459187659925,
+                36.41388484663949
+            ],
+            "/UsdConvert": [
+                -515.6105809748486,
+                342.24837575612133
+            ],
+            "/UsdDiff": [
+                -515.3829489399525,
+                242.6935579664327
+            ],
+            "/UsdEdit": [
+                -515.4003663995843,
+                134.87534582509653
+            ],
+            "/UsdView": [
+                -516.9785931503686,
+                -69.97034729692433
+            ],
+            "/Xform": [
+                882.1966463622368,
+                494.3560287593916
+            ],
+            "/node2": [
+                2918.2338826281275,
+                -64.61678854412969
+            ],
+            "/print_stage": [
+                40.860432008890996,
+                1417.82880956868
+            ]
+        },
+        "collapse": {
+            "/AddPayload": true,
+            "/Cone": true,
+            "/CreateNew": true,
+            "/Cube": true,
+            "/Cylinder": false,
+            "/DefinePrim": false,
+            "/GetAttribute": false,
+            "/GetPropertyNames": true,
+            "/Mesh": true,
+            "/RootLayerSave": false,
+            "/SetAssetIdentifier": true,
+            "/SetAssetName": true,
+            "/SetAssetName_pasted": true,
+            "/SetAttribute": false,
+            "/SetKind": false,
+            "/Sphere": true,
+            "/StageOpen": false,
+            "/UsdCat": true,
+            "/UsdConvert": false,
+            "/UsdDiff": true,
+            "/UsdEdit": true,
+            "/UsdView": true,
+            "/capsule": false,
+            "/node": false
+        }
+    },
+    "nodes": {
+        "/": {
+            "attrs": {
+                "USD_file": {
+                    "comment": "USD file you want to inspect",
+                    "type": "raw",
+                    "value": "${path::}/examples/tests/HelloWorld.usda"
+                }
+            }
+        },
+        "/UsdCat": {
+            "start_point": false,
+            "code": [
+                "import os",
+                "from sys import platform",
+                "import subprocess",
+                "# PLEASE INSURE YOUR USD ENV IS SETUP: http://graphics.pixar.com/usd/docs/USD-Tutorials.html #",
+                "# USDCAT Docs: http://graphics.pixar.com/usd/docs/USD-Toolset.html#USDToolset-usdcat #",
+                "",
+                "# usage: usdcat [-h] [-o file] [--usdFormat usda|usdb|usdc] [-f]",
+                "#               [--mask PRIMPATH[,PRIMPATH...]]",
+                "#               inputFiles [inputFiles ...]",
+                "",
+                "if platform == \"linux\" or platform == \"linux2\":",
+                "    # linux",
+                "    os.system(\"msg='\\\"Press any key to continue...\\\"';gnome-terminal -e \\\"bash -c 'usdcat  ${USD_file};read -p $msg'\\\"\")",
+                "elif platform == \"darwin\":",
+                "    # OS X",
+                "    pass",
+                "elif platform == \"win32\":",
+                "    # Windows...",
+                "    cmd = 'start powershell -NoExit -Command \"usdcat  ${USD_file}\";Write-Host -NoNewLine \\'Press any key to continue...\\';$null = $Host.UI.RawUI.ReadKey(\\'NoEcho,IncludeKeyDown\\');exit'",
+                "    subprocess.Popen(cmd, shell=True)"
+            ]
+        },
+        "/UsdConvert": {
+            "start_point": false,
+            "attrs": {
+                "converted_file": {
+                    "type": "raw",
+                    "value": "${path::}/examples/tests//HelloWorld.usdc"
+                }
+            },
+            "code": [
+                "import os",
+                "from sys import platform",
+                "# PLEASE INSURE YOUR USD ENV IS SETUP: http://graphics.pixar.com/usd/docs/USD-Tutorials.html #",
+                "# USDCAT Docs: http://graphics.pixar.com/usd/docs/USD-Toolset.html#USDToolset-usdcat #",
+                "# usage: usdcat [-h] [-o file] [--usdFormat usda|usdb|usdc] [-f]",
+                "#               [--mask PRIMPATH[,PRIMPATH...]]",
+                "#               inputFiles [inputFiles ...]",
+                "# *** To convert your abc to usd and vice versa you need to complie your usd with the alembic flag turned on.***",
+                "# https://graphics.pixar.com/usd/docs/Alembic-USD-Plugin.html",
+                "",
+                "if platform == \"linux\" or platform == \"linux2\":",
+                "    # linux",
+                "    os.system(\"msg='\\\"Press any key to continue...\\\"';gnome-terminal -e \\\"bash -c 'usdcat ${USD_file} --out ${converted_file};read -p $msg'\\\"\")",
+                "elif platform == \"darwin\":",
+                "    # OS X",
+                "    pass",
+                "elif platform == \"win32\":",
+                "    # Windows..",
+                "    cmd = 'start powershell -NoExit -Command \"usdcat ${USD_file} --out ${converted_file}\";Write-Host -NoNewLine \\'Press any key to continue...\\';$null = $Host.UI.RawUI.ReadKey(\\'NoEcho,IncludeKeyDown\\');exit'",
+                "    subprocess.Popen(cmd, shell=True)    "
+            ]
+        },
+        "/UsdDiff": {
+            "start_point": false,
+            "attrs": {
+                "diff_file": {
+                    "comment": "File you want to see the diff too",
+                    "type": "raw",
+                    "value": "${path::}/examples/tests/HelloWorldRedux.usda"
+                }
+            },
+            "code": [
+                "import os",
+                "from sys import platform",
+                "# PLEASE INSURE YOUR USD ENV IS SETUP: http://graphics.pixar.com/usd/docs/USD-Tutorials.html #",
+                "# USDCAT Docs: http://graphics.pixar.com/usd/docs/USD-Toolset.html#USDToolset-usddiff #",
+                "# ",
+                "# usage: usddiff [-h] [-n] [-f] files [files ...]",
+                "",
+                "if platform == \"linux\" or platform == \"linux2\":",
+                "    # linux",
+                "    os.system(\"msg='\\\"Press any key to continue...\\\"';gnome-terminal -e \\\"bash -c 'usddiff  ${USD_file} ${diff_file};read -p $msg'\\\"\")",
+                "elif platform == \"darwin\":",
+                "    # OS X",
+                "    pass",
+                "elif platform == \"win32\":",
+                "    # Windows..",
+                "    cmd = 'start powershell -NoExit -Command \"usddiff  ${USD_file} ${diff_file}\";Write-Host -NoNewLine \\'Press any key to continue...\\';$null = $Host.UI.RawUI.ReadKey(\\'NoEcho,IncludeKeyDown\\');exit'",
+                "    subprocess.Popen(cmd, shell=True)"
+            ]
+        },
+        "/UsdEdit": {
+            "start_point": false,
+            "code": [
+                "import os",
+                "from sys import platform",
+                "# PLEASE INSURE YOUR USD ENV IS SETUP: http://graphics.pixar.com/usd/docs/USD-Tutorials.html #",
+                "# USDCAT Docs: http://graphics.pixar.com/usd/docs/USD-Toolset.html#USDToolset-usdedit #",
+                "# ",
+                "# usage: usdedit [-h] [-n] [-f] usdFileName",
+                "",
+                "if platform == \"linux\" or platform == \"linux2\":",
+                "    # linux",
+                "    os.system(\"msg='\\\"Press any key to continue...\\\"';gnome-terminal -e \\\"bash -c 'usdedit  ${USD_file};read -p $msg'\\\"\")",
+                "elif platform == \"darwin\":",
+                "    # OS X",
+                "    pass",
+                "elif platform == \"win32\":",
+                "    # Windows...",
+                "    cmd = 'start powershell -NoExit -Command \"usdedit  ${USD_file}\";Write-Host -NoNewLine \\'Press any key to continue...\\';$null = $Host.UI.RawUI.ReadKey(\\'NoEcho,IncludeKeyDown\\');exit'",
+                "    subprocess.Popen(cmd, shell=True)",
+                ""
+            ]
+        },
+        "/UsdView": {
+            "start_point": false,
+            "code": [
+                "import subprocess",
+                "from sys import platform",
+                "# PLEASE INSURE YOUR USD ENV IS SETUP: http://graphics.pixar.com/usd/docs/USD-Tutorials.html #",
+                "# USDVIEW Docs: http://graphics.pixar.com/usd/docs/USD-Toolset.html#USDToolset-usdview #",
+                "",
+                "# usage: usdview",
+                "#        [-h] [--renderer {GL,Embree,Prman,HydraDisabled}]",
+                "#        [--select PRIMPATH] [--camera CAMERA] [--mask PRIMPATH[,PRIMPATH...]]",
+                "#        [--clearsettings] [--defaultsettings] [--norender] [--noplugins]",
+                "#        [--unloaded] [--timing] [--memstats {none,stage,stageAndImaging}]",
+                "#        [--numThreads NUMTHREADS] [--ff FIRSTFRAME] [--lf LASTFRAME]",
+                "#        [--cf CURRENTFRAME] [--complexity {low,medium,high,veryhigh}]",
+                "#        [--quitAfterStartup] [--sessionLayer SESSIONLAYER]",
+                "#        usdFile",
+                "",
+                "if platform == \"linux\" or platform == \"linux2\":",
+                "    # linux",
+                "    subprocess.Popen([\"usdview\", '${USD_file}'], stdout=subprocess.PIPE)",
+                "elif platform == \"darwin\":",
+                "    # OS X",
+                "    pass",
+                "elif platform == \"win32\":",
+                "    # Windows...",
+                "    subprocess.Popen('usdview ${USD_file}', stdout=subprocess.PIPE, shell=True)",
+                "",
+                "",
+                ""
+            ]
+        }
+    }
+}

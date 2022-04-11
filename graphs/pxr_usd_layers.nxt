@@ -1,0 +1,241 @@
+{
+    "version": "1.17",
+    "alias": "pxr_usd_layers",
+    "color": "#01697f",
+    "mute": false,
+    "solo": false,
+    "meta_data": {
+        "positions": {
+            "/AddPayload": [
+                2227.1166570858313,
+                88.81140043593805
+            ],
+            "/AddReference": [
+                2184.418868414707,
+                -13.6632923747597
+            ],
+            "/AddSublayer": [
+                2427.8331737147473,
+                320.4071437989132
+            ],
+            "/OpenOrFind_Payload": [
+                0,
+                0
+            ],
+            "/OpenOrFind_Sublayer": [
+                0,
+                160
+            ],
+            "/OpenOrFind_ref": [
+                0,
+                -155
+            ],
+            "/StageOpen2": [
+                320,
+                0
+            ]
+        }
+    },
+    "nodes": {
+        "/OpenOrFind_Payload": {
+            "child_order": [
+                "StageOpen_Payload"
+            ],
+            "attrs": {
+                "directory": {
+                    "comment": "Full path to your usd file on disk.",
+                    "value": "${path}${name}.${type}"
+                },
+                "name": {
+                    "comment": "Name of usd file",
+                    "value": "HelloWorld"
+                },
+                "path": {
+                    "comment": "Directory path",
+                    "type": "raw",
+                    "value": "${path::}/examples/tests/"
+                },
+                "payload_layer": {
+                    "comment": "Returns self.stage"
+                },
+                "type": {
+                    "comment": "type of usd file (usd, usdc, usda, usdz)",
+                    "value": "usda"
+                }
+            },
+            "code": [
+                "if Usd.Stage.IsSupportedFile('${directory}'):",
+                "    self.payload_layer = Sdf.Layer.FindOrOpen('${directory}')",
+                "    if not self.payload_layer:",
+                "        if Sdf.Layer.GetLoadedLayers():",
+                "            for layer in Sdf.Layer.GetLoadedLayers():",
+                "                temp_stage = Usd.Stage.Open(layer)",
+                "                temp_stage = None",
+                "        self.payload_layer = Sdf.Layer.CreateNew('${directory}')",
+                "else:",
+                "    print('File is not a supported type: ${directory}')"
+            ]
+        },
+        "/OpenOrFind_Payload/StageOpen_Payload": {
+            "child_order": [
+                "AddPayload"
+            ],
+            "attrs": {
+                "pay_stage": {
+                    "comment": "Returns self.stage"
+                }
+            },
+            "code": [
+                "self.pay_stage = Usd.Stage.Open(self.payload_layer)"
+            ]
+        },
+        "/OpenOrFind_Payload/StageOpen_Payload/AddPayload": {
+            "attrs": {
+                "payload": {},
+                "position": {
+                    "type": "raw",
+                    "value": "Back"
+                }
+            },
+            "code": [
+                "self.payload = self.prim.GetPayloads().AddPayload(assetPath=self.pay_stage.GetRootLayer().identifier,",
+                "                                                  primPath=self.prim.GetPath(),",
+                "                                                  position=Usd.ListPosition${position}OfPrependList)"
+            ]
+        },
+        "/OpenOrFind_Sublayer": {
+            "child_order": [
+                "StageOpen"
+            ],
+            "attrs": {
+                "directory": {
+                    "comment": "Full path to your usd file on disk.",
+                    "value": "${path}${name}.${type}"
+                },
+                "name": {
+                    "comment": "Name of usd file",
+                    "value": "HelloWorld"
+                },
+                "path": {
+                    "comment": "Directory path",
+                    "type": "raw",
+                    "value": "${path::}/examples/tests/"
+                },
+                "sub_layer": {
+                    "comment": "Returns self.stage"
+                },
+                "type": {
+                    "comment": "type of usd file (usd, usdc, usda, usdz)",
+                    "value": "usda"
+                }
+            },
+            "code": [
+                "if Usd.Stage.IsSupportedFile('${directory}'):",
+                "    self.sub_layer = Sdf.Layer.FindOrOpen('${directory}')",
+                "    if not self.sub_layer:",
+                "        if Sdf.Layer.GetLoadedLayers():",
+                "            for layer in Sdf.Layer.GetLoadedLayers():",
+                "                temp_stage = Usd.Stage.Open(layer)",
+                "                temp_stage = None",
+                "        self.sub_layer = Sdf.Layer.CreateNew('${directory}')",
+                "else:",
+                "    print('File is not a supported type: ${directory}')"
+            ]
+        },
+        "/OpenOrFind_Sublayer/StageOpen": {
+            "child_order": [
+                "AddSublayer"
+            ],
+            "attrs": {
+                "sub_stage": {
+                    "comment": "Returns self.stage"
+                }
+            },
+            "code": [
+                "self.sub_stage = Usd.Stage.Open(self.sub_layer)"
+            ]
+        },
+        "/OpenOrFind_Sublayer/StageOpen/AddSublayer": {
+            "code": [
+                "if not self.stage.HasLocalLayer(self.sub_layer):",
+                "    self.root_layer.subLayerPaths.append(self.sub_stage.GetRootLayer().identifier)",
+                "else:",
+                "    print('Does {} Hava {} as a local Layer? {}.'.format(self.stage, self.sub_layer, self.stage.HasLocalLayer(self.sub_layer)))",
+                ""
+            ]
+        },
+        "/OpenOrFind_ref": {
+            "child_order": [
+                "StageOpen_ref"
+            ],
+            "attrs": {
+                "directory": {
+                    "comment": "Full path to your usd file on disk.",
+                    "type": "raw",
+                    "value": "${path}${name}.${type}"
+                },
+                "name": {
+                    "comment": "Name of usd file",
+                    "type": "raw",
+                    "value": "HelloWorld"
+                },
+                "path": {
+                    "comment": "Directory path",
+                    "type": "raw",
+                    "value": "${path::}/examples/tests/"
+                },
+                "reference_layer": {
+                    "comment": "Returns self.stage",
+                    "type": "NoneType"
+                },
+                "type": {
+                    "comment": "type of usd file (usd, usdc, usda, usdz)",
+                    "type": "raw",
+                    "value": "usda"
+                }
+            },
+            "code": [
+                "if Usd.Stage.IsSupportedFile('${directory}'):",
+                "    self.reference_layer = Sdf.Layer.FindOrOpen('${directory}')",
+                "    if not self.reference_layer:",
+                "        if Sdf.Layer.GetLoadedLayers():",
+                "            for layer in Sdf.Layer.GetLoadedLayers():",
+                "                temp_stage = Usd.Stage.Open(layer)",
+                "                temp_stage = None",
+                "        self.reference_layer = Sdf.Layer.CreateNew('${directory}')",
+                "else:",
+                "    print('File is not a supported type: ${directory}')"
+            ]
+        },
+        "/OpenOrFind_ref/StageOpen_ref": {
+            "child_order": [
+                "AddReference"
+            ],
+            "attrs": {
+                "ref_stage": {
+                    "comment": "Returns self.stage",
+                    "type": "NoneType"
+                }
+            },
+            "code": [
+                "self.ref_stage = Usd.Stage.Open(self.reference_layer)"
+            ]
+        },
+        "/OpenOrFind_ref/StageOpen_ref/AddReference": {
+            "attrs": {
+                "position": {
+                    "type": "raw",
+                    "value": "Front"
+                },
+                "reference": {
+                    "type": "NoneType"
+                }
+            },
+            "code": [
+                "self.reference = self.prim.GetReferences().AddReference(assetPath=self.ref_stage.GetRootLayer().identifier,",
+                "                                                        primPath=self.prim.GetPath(),",
+                "                                                        position=Usd.ListPosition${position}OfPrependList)"
+            ]
+        }
+    }
+}

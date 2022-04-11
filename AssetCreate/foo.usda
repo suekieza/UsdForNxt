@@ -1,0 +1,23 @@
+#usda 1.0
+(
+    defaultPrim = "foo"
+    metersPerUnit = 0.01
+    upAxis = "Y"
+)
+
+def Xform "foo" (
+    assetInfo = {
+        asset identifier = @E:/Sandbox/nxt_graphs_usd/AssetCreate/foo.usda@
+        string name = "foo"
+        string version = "v001"
+    }
+    prepend inherits = </_class_foo>
+    kind = "assembly"
+)
+{
+}
+
+class "_class_foo"
+{
+}
+

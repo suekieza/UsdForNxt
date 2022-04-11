@@ -1,0 +1,229 @@
+{
+    "version": "1.17",
+    "alias": "LookPayload",
+    "color": "#cfa305",
+    "mute": false,
+    "solo": false,
+    "references": [
+        "./SublayerModelInfo.nxt"
+    ],
+    "comp_overrides": {
+        "./pxr_usd_helpers.nxt": {
+            "mute": false
+        }
+    },
+    "meta_data": {
+        "positions": {
+            "/AddSpecializer": [
+                2521.74245184163,
+                157.60890324010188
+            ],
+            "/ComputeUsdStageStats": [
+                2920.0049681864016,
+                254.20879600180254
+            ],
+            "/CreateNew2": [
+                851.4671420605996,
+                -446.6652086964138
+            ],
+            "/OpenOrFind_Payload22": [
+                2314.6040749204785,
+                -751.4047056980818
+            ],
+            "/RemoveSpecializer": [
+                2532.5375822005417,
+                254.76507647030166
+            ],
+            "/RootLayerSave2": [
+                3215.3028853991773,
+                -760.1830464486115
+            ],
+            "/RootLayerSave22": [
+                3004.02569810232,
+                -756.7002858805201
+            ],
+            "/RootLayerSave2_pasted": [
+                1684.801243725677,
+                -462.57137975795393
+            ],
+            "/RootLayerSave2_pasted_pasted": [
+                2745.1217597491427,
+                -245.83179938052027
+            ],
+            "/RootLayerSave3": [
+                2740.0632244003073,
+                -491.9396342470759
+            ],
+            "/StageOpen2": [
+                1084.6386515848867,
+                -278.83046944737276
+            ],
+            "/node": [
+                2707.8580233737143,
+                -764.241267780378
+            ],
+            "/print_stage3": [
+                2851.211701575555,
+                -571.6800733411915
+            ],
+            "/print_stage3_pasted": [
+                1252.0718895756959,
+                -454.4124782610666
+            ],
+            "/print_stage3_pasted_pasted": [
+                2273.9441442698117,
+                -245.8317993805203
+            ]
+        },
+        "collapse": {
+            "/print_stage3": false
+        }
+    },
+    "nodes": {
+        "/OpenOrFind_Payload2/StageOpen_Payload": {
+            "child_order": [
+                "DefinePrim2",
+                "AddPayload"
+            ]
+        },
+        "/OpenOrFind_Payload2/StageOpen_Payload/AddPayload": {
+            "code": [
+                "self.payload = STAGE.prim_model.GetPayloads().AddPayload(assetPath=self.pay_stage.GetRootLayer().identifier,",
+                "                                                  primPath=STAGE.prim_model.GetPath(),",
+                "                                                  position=Usd.ListPosition${position}OfPrependList)"
+            ]
+        },
+        "/OpenOrFind_Payload22": {
+            "instance": "/OpenOrFind_Payload2",
+            "execute_in": "/OpenOrFind_Sublayer2",
+            "child_order": [
+                "StageOpen_Payload"
+            ],
+            "attrs": {
+                "path": {
+                    "value": "${path::}/asset/look/"
+                },
+                "payload_layer_look": {
+                    "comment": "Returns self.stage",
+                    "type": "NoneType"
+                },
+                "payload_name": {
+                    "value": "look"
+                }
+            },
+            "code": [
+                "if Usd.Stage.IsSupportedFile('${directory}'):",
+                "    self.payload_layer_look = Sdf.Layer.FindOrOpen('${directory}')",
+                "    if not self.payload_layer_look:",
+                "        if Sdf.Layer.GetLoadedLayers():",
+                "            for layer in Sdf.Layer.GetLoadedLayers():",
+                "                temp_stage = Usd.Stage.Open(layer)",
+                "                temp_stage = None",
+                "        self.payload_layer_look = Sdf.Layer.CreateNew('${directory}')",
+                "    STAGE.payload_layer_look = self.payload_layer_look",
+                "else:",
+                "    print('File is not a supported type: ${directory}')"
+            ]
+        },
+        "/OpenOrFind_Payload22/StageOpen_Payload": {
+            "child_order": [
+                "DefinePrim2",
+                "AddPayload"
+            ],
+            "attrs": {
+                "pay_stage_look": {
+                    "comment": "Returns self.stage"
+                }
+            },
+            "code": [
+                "self.pay_stage_look = Usd.Stage.Open(self.payload_layer_look)",
+                "STAGE.pay_stage_look = self.pay_stage_look"
+            ]
+        },
+        "/OpenOrFind_Payload22/StageOpen_Payload/AddPayload": {
+            "attrs": {
+                "position": {
+                    "value": "Front"
+                }
+            },
+            "code": [
+                "print('IDENTIFIER: ', self.pay_stage_look.GetRootLayer().identifier)",
+                "print('Prim Path: ', STAGE.prim.GetPath())",
+                "self.payload = STAGE.prim_look.GetPayloads().AddPayload(assetPath=self.pay_stage_look.GetRootLayer().identifier,",
+                "                                                  primPath=STAGE.prim_look.GetPath(),",
+                "                                                  position=Usd.ListPosition${position}OfPrependList)"
+            ]
+        },
+        "/OpenOrFind_Payload22/StageOpen_Payload/DefinePrim2": {
+            "attrs": {
+                "prim_look": {
+                    "type": "NoneType"
+                },
+                "prim_name_look": {
+                    "type": "raw",
+                    "value": "${/OpenOrFind_CreateAsset/StageOpen_CreateAsset/DefinePrim_CreateAsset.prim_name_asset}/look"
+                }
+            },
+            "code": [
+                "self.prim_look = STAGE.stage.DefinePrim('${prim_name_look}', '${type_usdgeom}')",
+                "STAGE.prim_look = self.prim_look"
+            ]
+        },
+        "/OpenOrFind_Sublayer2/StageOpen/DefinePrim_CreateAsset2": {
+            "child_order": [
+                "ModelApi2"
+            ],
+            "attrs": {
+                "prim_geom": {}
+            },
+            "code": [
+                "self.prim_geom = self.sub_stage.DefinePrim('${prim_name}', '${type_usdgeom}')",
+                "STAGE.prim_geom = self.prim_geom",
+                ""
+            ]
+        },
+        "/OpenOrFind_Sublayer2/StageOpen/DefinePrim_CreateAsset2/ModelApi2": {
+            "code": [
+                "self.model = Usd.ModelAPI(self.prim_geom)"
+            ]
+        },
+        "/OpenOrFind_Sublayer22/StageOpen/DefinePrim_CreateAsset2": {
+            "child_order": [
+                "ModelApi2"
+            ],
+            "attrs": {
+                "prim_uv": {}
+            },
+            "code": [
+                "self.prim_uv = self.sub_stage_uv.OverridePrim('${prim_name_geo}')",
+                "STAGE.prim_uv = self.prim_uv",
+                ""
+            ]
+        },
+        "/OpenOrFind_Sublayer22/StageOpen/DefinePrim_CreateAsset2/ModelApi2": {
+            "code": [
+                "self.model = Usd.ModelAPI(self.prim_uv)"
+            ]
+        },
+        "/RootLayerSave2": {
+            "execute_in": "/OpenOrFind_Payload22",
+            "child_order": [
+                "RootLayerSave32"
+            ]
+        },
+        "/RootLayerSave2/RootLayerSave32": {
+            "instance": "/RootLayerSave",
+            "attrs": {
+                "pay_stage_look": {
+                    "comment": "Stage you wish to save out.",
+                    "type": "raw",
+                    "value": "${/OpenOrFind_CreateAsset/StageOpen_CreateAsset.stage}"
+                }
+            },
+            "code": [
+                "STAGE.pay_stage_look.GetRootLayer().Save()",
+                "STAGE.pay_stage_look = None"
+            ]
+        }
+    }
+}

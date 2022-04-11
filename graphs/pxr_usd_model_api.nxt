@@ -1,0 +1,114 @@
+{
+    "version": "1.17",
+    "alias": "pxr_usd_model_api",
+    "color": "#6e33bb",
+    "mute": false,
+    "solo": false,
+    "meta_data": {
+        "positions": {
+            "/ModelApi": [
+                1769.417269422876,
+                -26.020842197395236
+            ],
+            "/SetAssetIdentifier": [
+                1856.772953942703,
+                444.21294894124725
+            ],
+            "/SetAssetName": [
+                1778.046587678167,
+                128.33397955302254
+            ],
+            "/SetAssetVersion": [
+                1883.611635375008,
+                277.36698806621
+            ],
+            "/SetKind": [
+                1767.5641178881224,
+                11.672593231336657
+            ],
+            "/SetPayloadAssetDependencies": [
+                1921.825059436191,
+                559.4481072439976
+            ]
+        }
+    },
+    "nodes": {
+        "/": {
+            "code": [
+                "from pxr import Usd, Sdf, UsdGeom, Kind"
+            ]
+        },
+        "/ModelApi": {
+            "attrs": {
+                "model": {},
+                "prim": {}
+            },
+            "code": [
+                "self.model = Usd.ModelAPI(self.prim)"
+            ]
+        },
+        "/SetAssetIdentifier": {
+            "attrs": {
+                "asset_identifier": {
+                    "type": "raw",
+                    "value": "some/path/to/file.usda"
+                },
+                "model": {}
+            },
+            "code": [
+                "self.model.SetAssetIdentifier('${asset_identifier}')",
+                ""
+            ]
+        },
+        "/SetAssetName": {
+            "attrs": {
+                "asset_name": {
+                    "type": "raw",
+                    "value": "some_asset"
+                },
+                "model": {}
+            },
+            "code": [
+                "self.model.SetAssetName('${asset_name}')"
+            ]
+        },
+        "/SetAssetVersion": {
+            "attrs": {
+                "asset_version": {
+                    "type": "raw",
+                    "value": "v001"
+                },
+                "model": {}
+            },
+            "code": [
+                "self.model.SetAssetVersion('${asset_version}')",
+                ""
+            ]
+        },
+        "/SetKind": {
+            "attrs": {
+                "kind": {
+                    "type": "raw",
+                    "value": "Kind.Tokens.component"
+                },
+                "model": {}
+            },
+            "code": [
+                "self.model.SetKind(${kind})"
+            ]
+        },
+        "/SetPayloadAssetDependencies": {
+            "attrs": {
+                "asset_paths": {
+                    "type": "list",
+                    "value": "[\"something.usd\", \"another/thing.usd\"]"
+                },
+                "model": {}
+            },
+            "code": [
+                "for path in ${asset_paths}:",
+                "    self.model.SetPayloadAssetDependencies(Sdf.AssetPathArray([Sdf.AssetPath(path)]))"
+            ]
+        }
+    }
+}
