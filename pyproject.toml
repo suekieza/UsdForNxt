@@ -1,0 +1,13 @@
+[build - system]
+build - backend = "poetry.core.masonry.api"
+requires = ["poetry-core>=1.0.0"]
+
+[tool]
+[tool.poetry]
+authors = ["Sue Sauer <you@example.com>"]
+description = ""
+name = "usdfornxt"
+version = "0.1.0"
+[tool.poetry.dependencies]
+python = "^3.8"
+[tool.poetry.dev - dependencies]
